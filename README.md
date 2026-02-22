@@ -20,7 +20,7 @@ Speaker output, MEMS microphone, headphone jack, SD card, and nine ready-to-flas
 
 ## Overview
 
-[PUT PHOTO OF TINYSPEAK TOP AND BOTTOM PCB SIDE-BY-SIDE HERE]
+![tinySpeak w/ Headphones](Assets/tinySpeak-store-3.jpg)
 
 tinySpeak is an expansion HAT that sits on top of the tinyCore ESP32-S3 board and turns it into a complete audio development platform. It provides everything you need to build projects that listen, speak, and play music — without any external wiring.
 
@@ -35,8 +35,6 @@ The tinySpeak HAT includes an I2S Class-D amplifier (MAX98357A) with an 8-Ohm sp
 ---
 
 ## Pinout
-
-[PUT PINOUT DIAGRAM / RENDER OF TINYSPEAK HERE]
 
 tinySpeak uses the following tinyCore GPIO pins. These are active whenever the HAT is mounted, so avoid assigning them to other peripherals in your own sketches.
 
@@ -106,19 +104,17 @@ To get started with tinySpeak, you need a tinyCore ESP32-S3 board, a tinySpeak H
 
 tinySpeak connects to tinyCore through stacking pin headers. If your HAT arrived with loose headers (all of them currently ship this way), you'll need to solder them before first use.
 
-[PUT PHOTO OF UNSOLDERED TINYSPEAK + LOOSE HEADERS LAID OUT HERE]
+![tinySpeak mounted on tinyCore](Assets/tinySpeak-store-4.jpg)
 
 Start by inserting the stacking headers into the tinySpeak HAT from the bottom side of the board, so the long pins point downward (these will plug into the tinyCore). The short pins should poke through to the top side of the tinySpeak PCB where you'll solder them. There are three headers, two male 8-pin headers, and one female 9-pin header. Be sure to orient these the right way!
 
-[PUT PHOTO OF HEADERS INSERTED INTO TINYSPEAK, READY TO SOLDER HERE]
-
 A helpful technique is to first seat the headers loosely into the tinyCore board (without soldering to the tinyCore), then place the tinySpeak HAT on top. This uses the tinyCore as an alignment jig so your headers end up perfectly straight and at the correct spacing. Once aligned, solder the short pins on the top side of the tinySpeak board. Work one pin at each corner first to tack the headers in place, then go back and solder the remaining pins.
 
-[PUT PHOTO OF FINISHED SOLDER JOINTS CLOSE-UP HERE]
+![tinySpeak mounted on tinyCore](Assets/tinySpeak-store-2.jpg)
 
 After soldering, remove the tinySpeak from the tinyCore, inspect your joints, and then re-seat the HAT firmly. The fit should be snug but not require excessive force.
 
-![tinySpeak mounted on tinyCore](Assets/tinySpeak.jpg)
+![tinySpeak mounted on tinyCore](Assets/tinySpeak-store-5.jpg)
 
 ### Arduino IDE Setup
 
