@@ -12,7 +12,7 @@
 
 Speaker output, MEMS microphone, headphone jack, SD card, and nine ready-to-flash demo programs — from an MP3 player to a voice-controlled AI assistant.
 
-[Purchase](https://mr.industries) · [Discord](https://discord.gg/hvJZhwfQsF) · [Documentation](https://docs.mr.industries)
+[Purchase](https://mr.industries) · [Discord](https://discord.gg/hvJZhwfQsF) · [Documentation](https://tinydocs.cc/3_tiny-hats/tinyspeak/)
 
 </div>
 
@@ -145,27 +145,17 @@ A good first program to try is **tinyMP3Player**, since it has no WiFi or API ke
 
 ## Adding the RX Button
 
-[PUT PHOTO OF RX BUTTON SOLDERED TO TINYSPEAK HERE]
-
 Several of the demo programs support an optional tactile pushbutton connected to the ESP32's RX pin. This button is used for push-to-talk recording (in the voice and walkie-talkie demos), play/pause and track skip (in the MP3 player), sound triggering (in the soundboard), and mute toggling (in the theremin). The tinySpeak PCB does not have this button included — you solder it yourself if your project needs it.
 
 ### Wiring
 
 The button is wired between the **RX** pin and **GND**. No external resistor is needed because all of the demo firmware enables the ESP32's internal pull-up resistor on the RX pin (`pinMode(RX, INPUT_PULLUP)`). When the button is not pressed, the pin reads HIGH. When pressed, the pin is pulled to GND and reads LOW.
 
-```
-   tinyCore RX Pin
-        |
-       [ ] ← Tactile pushbutton
-        |
-       GND
-```
-
 If you're connecting an external button with jumper wires (for example, mounting a larger button on an enclosure), run one wire from the button to the RX pin on the tinyCore header and the other wire to any GND pin.
 
 ### A Note on the RX Pin
 
-The RX pin doubles as the ESP32's UART receive line, which is used during serial programming. (tinyCore does not normally use these pins, as the ESP32-S3 provides dedicated USB programming pins.) In practice this rarely causes conflicts — the button is open (HIGH) by default and only shorts to GND when pressed, so it doesn't interfere with uploading firmware. If you ever have trouble uploading while the button is held down, simply release it during the upload.
+The RX pin doubles as the ESP32's UART receive line, which is used during serial programming. (tinyCore does not normally use these pins, as the ESP32-S3 provides dedicated USB programming pins.) In practice this rarely causes conflicts — the button is open (HIGH) by default and only shorts to GND when pressed, so it doesn't interfere with uploading firmware (as long as you aren't pressing the button).
 
 ---
 
